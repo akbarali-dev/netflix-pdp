@@ -1,1 +1,2 @@
 # netflix-pdp
+## django project
