@@ -4,6 +4,15 @@
 
   jobs:
     run-tests:
+      services:
+        postgres:
+          image: postgres:9.6
+          env:
+            POSTGRES_DB: netflix_test_db
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: root123
+          ports:
+            -5432:5432
       runs-on: ubuntu-latest
       env:
         DJANGO_SETTINGS_MODULE: config.settings
