@@ -1,5 +1,4 @@
   name: Music API CI
-
   on: [push]
 
   jobs:
