@@ -1,27 +1,68 @@
-  name: Music API CI
+name: Run tests
+on: push
+jobs:
+  execute_tests:
+    name: Install requirements and execute tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update
+        run: sudo apt update
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install pip
+        run: sudo apt install python3-pip
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Execute tests
+        env:
+          DJANGO_SETTINGS_MODULE: config.settings
+        run: pytest
 
-  on: [push]
 
-  jobs:
-    run-tests:
-      services:
-        postgres:
-          image: postgres:9.6
-          env:
-            POSTGRES_DB: netflix_test_db
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: root123
-          ports:
-            - 5432:5432
-      runs-on: ubuntu-latest
-      env:
-        DJANGO_SETTINGS_MODULE: config.settings
-      steps:
-        - uses: action/checkout@v2
-        - uses: action/setup-python@v2
-          with:
-            python-version: 3.10.12
-        - name: Install Requirements
-          run: pip install -r requirements.txt
-        - name: Run Tests
-          run: pytest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  name: Music API CI
+#
+#  on: [push]
+#
+#  jobs:
+#    run-tests:
+#      services:
+#        postgres:
+#          image: postgres:9.6
+#          env:
+#            POSTGRES_DB: netflix_test_db
+#            POSTGRES_USER: postgres
+#            POSTGRES_PASSWORD: root123
+#          ports:
+#            - 5432:5432
+#      runs-on: ubuntu-latest
+#      env:
+#        DJANGO_SETTINGS_MODULE: config.settings
+#      steps:
+#        - uses: action/checkout@v3
+#        - uses: action/setup-python@v2
+#          with:
+#            python-version: 3.10.12
+#        - name: Install Requirements
+#          run: pip install -r requirements.txt
+#        - name: Run Tests
+#          run: pytest
