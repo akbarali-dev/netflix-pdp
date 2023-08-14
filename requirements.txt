@@ -4,4 +4,4 @@ drf-yasg==1.21.6
 pytest==6.2.4
 pytest-django==4.3.0
 psycopg2-binary==2.9.6
-
+flake8==6.1.0
