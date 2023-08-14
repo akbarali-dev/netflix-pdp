@@ -15,4 +15,5 @@ urlpatterns = [
     path('movies/comments/<int:pk>/', CommentApiView.as_view(http_method_names=['delete']),
          name="movie_comment_delete"),
     path('auth/', obtain_auth_token)
+
 ]
