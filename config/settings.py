@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "netflix_test_db",
+        "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "root123",
         "HOST": "127.0.0.1", #192.168.100.18
