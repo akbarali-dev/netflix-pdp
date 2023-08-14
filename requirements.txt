@@ -3,7 +3,6 @@ djangorestframework==3.14.0
 drf-yasg==1.21.6
 pytest==6.2.4
 pytest-django==4.3.0
-
 flake8==6.1.0
 django-filter==23.2
 psycopg2==2.9.7
