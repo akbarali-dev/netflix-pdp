@@ -16,7 +16,7 @@ jobs:
       - name: Execute tests
         env:
           DJANGO_SETTINGS_MODULE: config.settings
-        run: pytest
+        run: python3 manage.py test
 
 
 
