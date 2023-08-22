@@ -5,7 +5,9 @@ services:
     build: .
 
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+        restart: true
 
     environment:
       - POSTGRES_ENGINE=django.db.backends.postgresql_psycopg2
